@@ -1,96 +1,76 @@
-# 🔐 React Login System — JWT Authentication & Protected UI
-
-<p align="center">
-  <strong>Full Stack Development / MST Practical</strong>
-</p>
-
-<p align="center">
-  A professional React-based Login and Authentication System demonstrating<br>
-  Authentication, Simulated JWT, Token Generation, Token Storage, Role Display, and Protected UI.
-</p>
-
----
-
-## 📚 Practical Information
-
-| Detail | Information |
-|---|---|
-| **Practical** | MST Practical |
-| **Subject** | Full Stack Development |
-| **Submitted To** | Shivam Sir |
-| **Submitted By** | Shaman Sharma |
-| **UID** | 24BAI70974 |
-| **Section** | 24 AML 4 B |
-| **Technology** | React.js + Vite |
-| **Project Type** | Authentication & Protected UI |
-
----
-
-# 🎯 Practical Objective
+🔐 React Login System — JWT Authentication & Protected UI
+<p align="center"> <strong>Full Stack Development — MST Practical</strong> </p> <p align="center"> A professional React-based authentication system demonstrating<br> Authentication, Simulated JWT, Token Generation, Token Storage, Role Display, and Protected UI. </p>
+📚 Practical Information
+Detail	Information
+Practical	MST Practical
+Subject	Full Stack Development
+Submitted To	Shivam Sir
+Submitted By	Shaman Sharma
+UID	24BAI70974
+Section	24 AML 4 B
+Technology	React.js + Vite
+Project Type	Authentication & Protected UI
+🎯 Practical Objective
 
 Create a simple React Login System that:
 
-- Contains username and password fields.
-- Provides a Login button.
-- Performs authentication using demo credentials.
-- Generates a simulated JWT/token after successful login.
-- Includes `userId` and `role` in the token payload.
-- Stores the generated token.
-- Displays the authenticated user's role.
-- Shows a protected Dashboard only when the user is logged in.
-- Provides logout functionality.
-- Maintains authentication state after page refresh.
+Contains username and password fields.
+Provides a Login button.
+Authenticates the user using demo credentials.
+Generates a simulated JWT/token after successful login.
+Includes userId and role in the token payload.
+Stores the generated token.
+Displays the authenticated user's role.
+Shows a protected Dashboard only when the user is logged in.
+Provides logout functionality.
+Maintains the authentication session after page refresh.
+🚀 Features
+🔑 Authentication
+Username and password login
+Credential validation
+Invalid login handling
+Successful authentication flow
+Logout functionality
+🪪 Simulated JWT
+Generates a JWT-like token after successful authentication
+Demonstrates the standard JWT structure:
 
----
-
-# 🚀 Features
-
-### 🔑 Authentication
-- Username and password login.
-- Input validation.
-- Invalid credential handling.
-- Successful authentication flow.
-
-### 🪪 Simulated JWT
-- Generates a JWT-like token after successful login.
-- Demonstrates the conceptual JWT structure:
-
-```text
 Header.Payload.Signature
+
 Token payload contains:
 userId
 username
 role
 iat
 💾 Token Storage
-Authentication token is stored in browser localStorage.
-User authentication data is also persisted.
-Authentication state can be restored after page refresh.
+Authentication token is stored using browser localStorage
+User authentication information is persisted
+Authentication state can be restored after page refresh
 🛡️ Protected UI
-Dashboard is rendered only when the authentication state is available.
-Unauthenticated users remain on the Login page.
-Protected content is displayed after successful authentication.
+Dashboard is displayed only after successful authentication
+Unauthenticated users remain on the Login page
+Protected content is accessible only when a valid authentication session exists
 👤 Role Display
 
-The authenticated user's role is displayed directly on the Dashboard.
+The authenticated user's role is displayed on the Dashboard.
 
 🚪 Logout
-Removes stored authentication data.
-Clears React authentication state.
-Returns the user to the Login page.
+Removes the stored authentication token
+Clears authentication state
+Returns the user to the Login page
 🎨 Professional UI
-Modern dark interface.
-Responsive layout.
-Authentication status indicator.
-Dashboard cards.
-Token visualization.
-Authentication flow section.
+Modern dark-themed interface
+Responsive layout
+Authentication status indicator
+Dashboard information cards
+Token visualization
+Authentication flow section
 🛠️ Technologies Used
 React.js
 Vite
 JavaScript (ES6+)
-CSS3
 HTML5
+CSS3
 Browser localStorage
 📂 Project Structure
 react-jwt-login-system/
@@ -114,49 +94,47 @@ react-jwt-login-system/
 ├── README.md
 └── vite.config.js
 🔄 Authentication Flow
-┌──────────────────────┐
-│    Login Interface   │
-│ Username + Password  │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│ Credential Validation│
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│ Generate Simulated   │
-│      JWT Token       │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│    Store Token in    │
-│     localStorage     │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│ Update Authentication│
-│        State         │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│  Protected Dashboard │
-│  + User Role + Token │
-└──────────────────────┘
+┌─────────────────────────┐
+│     Login Interface     │
+│  Username + Password    │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│   Credential Validation │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│ Generate Simulated JWT  │
+│         Token           │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│    Store Token in       │
+│     localStorage        │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│  Update Authentication  │
+│          State          │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│   Protected Dashboard   │
+│  User Role + Token Info │
+└─────────────────────────┘
 🧩 JWT Concept
 
-A standard JWT consists of three parts:
+A standard JSON Web Token (JWT) consists of three parts:
 
 HEADER.PAYLOAD.SIGNATURE
 Header
 
-Contains information about the token type and algorithm.
-
-Example:
+Contains information about the token type and signing algorithm.
 
 {
   "alg": "HS256",
@@ -166,8 +144,6 @@ Payload
 
 Contains user-related claims.
 
-Example:
-
 {
   "userId": "USR001",
   "username": "shaman",
@@ -176,31 +152,32 @@ Example:
 }
 Signature
 
-In this practical, the signature is simulated for demonstration purposes.
+The signature represents the verification component of a JWT.
 
-simulated-signature
+For this MST practical, the token and signature are simulated on the frontend for educational demonstration.
+
 🔑 Demo Credentials
 
 Use the following credentials to test the application:
 
-Username: shaman
-Password: 123456
+Field	Value
+Username	shaman
+Password	123456
+User ID	USR001
+Role	Admin
 
-After successful authentication:
+After successful authentication, the protected Dashboard displays the authenticated user's information and JWT/token status.
 
-User ID: USR001
-Role: Admin
-Authentication: JWT Token
 💾 Token Storage
 
-After successful login, the application stores the authentication information in browser localStorage.
+After successful login, the application stores authentication information in the browser's localStorage.
 
-Example keys:
+Example storage keys:
 
 authToken
 authUser
 
-The token can be inspected through:
+The stored token can be inspected through:
 
 Browser
    ↓
@@ -213,32 +190,28 @@ Local Storage
 localhost:5173
 🛡️ Protected Dashboard
 
-The Dashboard is displayed only when the authentication state is available.
+The Dashboard is conditionally rendered based on the authentication state.
 
 Conceptually:
 
-user && token
+User + Token
+     │
+     ├── Available ──→ Protected Dashboard
+     │
+     └── Missing ────→ Login Page
 
-If the condition is true:
-
-Dashboard
-
-Otherwise:
-
-Login Page
-
-This demonstrates the concept of Protected UI.
+This demonstrates the concept of Protected UI, where authenticated content is not displayed to an unauthenticated user.
 
 🔄 Session Persistence
 
 When the application is refreshed:
 
-The stored token is retrieved.
+The stored authentication token is retrieved.
 The stored user information is retrieved.
-React authentication state is restored.
+The React authentication state is restored.
 The protected Dashboard remains accessible.
 
-This demonstrates persistence of the authentication session across page refreshes.
+This demonstrates authentication-state persistence using browser storage.
 
 🚪 Logout Flow
 
@@ -250,9 +223,9 @@ Remove authToken
    ↓
 Remove authUser
    ↓
-Clear React authentication state
+Clear Authentication State
    ↓
-Return to Login
+Return to Login Page
 ▶️ How to Run the Project
 1. Clone the Repository
 git clone https://github.com/shaman280306/react-jwt-login-system.git
@@ -268,41 +241,42 @@ Vite will provide a local development URL similar to:
 
 http://localhost:5173/
 
-Open it in your browser.
+Open the URL in a web browser to use the application.
 
 🧪 Testing Checklist
-Test	Expected Result
+Test Case	Expected Result
 Empty username/password	Validation message
-Incorrect credentials	Invalid login message
+Incorrect credentials	Login failure message
 Correct credentials	Dashboard opens
-Successful login	JWT/token generated
+Successful login	Simulated JWT/token generated
 Token storage	Token saved in localStorage
+User ID	USR001 displayed
 Role display	Admin displayed
-Page refresh	Authentication restored
-Protected Dashboard	Accessible only after login
-Logout	Session cleared and Login page shown
+Page refresh	Authentication session restored
+Protected Dashboard	Visible only after authentication
+Logout	Token removed and Login page displayed
 📌 Concepts Demonstrated
-
-This practical demonstrates the following Full Stack Development concepts:
-
 Authentication
-       ↓
+      ↓
 Credential Validation
-       ↓
+      ↓
 JWT / Token Generation
-       ↓
+      ↓
 Token Storage
-       ↓
+      ↓
 Authentication State
-       ↓
+      ↓
 Protected UI
-       ↓
+      ↓
 Role Display
-       ↓
+      ↓
 Logout
+
+The practical demonstrates the relationship between authentication, token-based identity, client-side storage, and conditional rendering of protected content in React.
+
 ⚠️ Educational / Security Note
 
-This project is an educational demonstration of authentication and JWT concepts for the MST practical.
+This project is an educational implementation for the MST Practical and demonstrates the workflow and concepts of JWT-based authentication.
 
 The JWT generation in this project is intentionally simulated on the frontend.
 
@@ -310,12 +284,12 @@ In a production application:
 
 Authentication should be handled by a secure backend.
 JWTs should be cryptographically signed by the server.
-Passwords should never be stored in frontend code.
-Proper authorization checks should be performed on the server.
-Secure token-storage strategies should be selected according to the application's security requirements.
-HTTPS should be used for communication.
+Passwords should never be hard-coded or stored in frontend source code.
+Authorization should be enforced on the server.
+Token-storage strategies should be selected according to the application's security requirements.
+HTTPS should be used for secure communication.
 
-Therefore, this project demonstrates the concept and workflow of JWT-based authentication rather than production-grade authentication security.
+Therefore, this project demonstrates the authentication concept and workflow, rather than production-grade authentication security.
 
 👨‍💻 Submitted By
 Shaman Sharma
@@ -327,16 +301,4 @@ MST Practical
 
 Submitted To: Shivam Sir
 
-<p align="center">
-🔐 React Authentication System
-
-Authentication • JWT • Token Storage • Protected UI
-
-</p> <p align="center"> Built with React + Vite </p> ```
-Then run these commands
-
-After saving README.md:
-
-git add README.md
-git commit -m "docs: add professional MST practical README"
-git push
+<p align="center"> <strong>🔐 React Authentication System</strong> </p> <p align="center"> Authentication • JWT • Token Storage • Protected UI </p> <p align="center"> Built with React + Vite </p>
